@@ -1,0 +1,961 @@
+/* Top menu bar styles */
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    background: none;
+    padding: 3px 0 0 0;
+    
+}
+
+.menu-item {
+    position: relative;
+    font-family: 'Montserrat';
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    background: none;
+    border: none;
+    padding: 8px 18px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+
+.menu-item:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: #60bef8;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.menu-item:hover:after {
+    transform: scaleX(1);
+}
+
+.menu-item:hover {
+    color: #60bef8;
+    background: rgba(255,255,255,0.7);
+    border-radius: 8px;
+    transition: background 0.3s, color 0.2s;
+}
+
+body {
+    padding-top: 190px;
+    background-image: linear-gradient(60deg, #60bef8, #fcbdfb, #d88cff);
+    background-size: 200% 100%;
+    animation: bgAnimatedGradient 15s infinite linear;
+    background-attachment: fixed;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.bg-container{
+    background: none;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 50px;
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 350px;
+}
+
+.box:first-child {
+    position: sticky;
+    top: 20px;
+    z-index: 100;
+    transition: all 0.7s ease-out;
+}
+
+.content-box {
+    width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+h1{
+    text-align: center;
+    padding-top: 0;
+    font-family: 'Montserrat';
+    letter-spacing: 2px;
+    color: #333;
+    margin: 0;
+}
+
+h2 {
+    font-family: 'Montserrat';
+    color: #333;
+    margin-top: 0;
+}
+
+h3 {
+    font-family: 'Montserrat';
+    color: #333;
+    margin-top: 0;
+}
+
+p {
+    font-family: 'Montserrat';
+    color: #333;
+    line-height: 1.6;
+}
+
+.membership-hero {
+    width: min(760px, 90vw);
+    padding: 26px 34px;
+}
+
+.membership-hero p {
+    margin: 10px 0 0;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.pricing-grid {
+    width: min(980px, 92vw);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px;
+    z-index: 2;
+}
+
+.tier-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 22px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+    padding: 28px 26px;
+    overflow: hidden;
+}
+
+.tier-card::before {
+    content: "";
+    position: absolute;
+    inset: -100px auto auto -80px;
+    width: 210px;
+    height: 210px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(96, 190, 248, 0.25), transparent 70%);
+    pointer-events: none;
+}
+
+.tier-free {
+    border-color: rgba(96, 190, 248, 0.4);
+}
+
+.tier-pro {
+    border-color: rgba(216, 140, 255, 0.55);
+    box-shadow: 0 16px 34px rgba(101, 72, 144, 0.25);
+}
+
+.tier-label {
+    margin: 0;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #4e5a73;
+}
+
+.tier-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    margin: 0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: #d88cff;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.tier-price {
+    margin: 8px 0 18px;
+    font-family: 'Montserrat';
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #1f2635;
+}
+
+.tier-price span {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #5d6880;
+}
+
+.tier-perks {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+}
+
+.tier-perks li {
+    position: relative;
+    padding-left: 26px;
+    margin: 0 0 12px;
+    font-family: 'Montserrat';
+    color: #30384b;
+    line-height: 1.4;
+}
+
+.tier-perks li::before {
+    content: "?";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #60bef8;
+    font-weight: 800;
+}
+
+.tier-cta {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: 'Montserrat';
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    color: #1f2635;
+    background: rgba(96, 190, 248, 0.24);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.tier-cta:hover {
+    transform: translateY(-2px);
+    background: rgba(96, 190, 248, 0.32);
+    box-shadow: 0 8px 18px rgba(96, 190, 248, 0.22);
+}
+
+.tier-cta-pro {
+    color: #fff;
+    background: linear-gradient(135deg, #d88cff, #60bef8);
+}
+
+.tier-cta-pro:hover {
+    background: linear-gradient(135deg, #c679f7, #4baeea);
+    box-shadow: 0 10px 20px rgba(109, 73, 154, 0.32);
+}
+
+@media (max-width: 760px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        width: min(560px, 92vw);
+    }
+
+    .membership-hero {
+        width: min(560px, 90vw);
+        padding: 20px 22px;
+    }
+
+    .tier-price {
+        font-size: 2.1rem;
+    }
+}
+
+/* Passcode Lock */
+
+body.locked {
+    overflow: hidden;
+}
+
+.passcode-overlay {
+    --lava-c1: rgba(96, 190, 248, 0.42);
+    --lava-c2: rgba(216, 140, 255, 0.36);
+    --lava-c3: rgba(252, 189, 251, 0.4);
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 24px;
+    background: rgba(4, 8, 20, 0.7);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    transform: scale(1.01);
+    animation: overlayIn 0.45s ease forwards;
+}
+
+.passcode-overlay[hidden] {
+    display: none !important;
+}
+
+.auth-corner {
+    position: fixed;
+    top: 3px;
+    left: 14px;
+    z-index: 420;
+}
+
+.passcode-overlay::before,
+.passcode-overlay::after {
+    content: "";
+    position: absolute;
+    inset: -25%;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 45%;
+    opacity: 0.78;
+    filter: blur(34px) saturate(115%);
+}
+
+.passcode-overlay::before {
+    background:
+        radial-gradient(40% 35% at 16% 58%, var(--lava-c1), transparent 72%),
+        radial-gradient(38% 33% at 64% 32%, var(--lava-c2), transparent 74%),
+        radial-gradient(42% 36% at 82% 72%, var(--lava-c3), transparent 76%);
+    animation: lavaShiftA 11s linear infinite;
+}
+
+.passcode-overlay::after {
+    background:
+        radial-gradient(36% 32% at 72% 68%, var(--lava-c1), transparent 72%),
+        radial-gradient(44% 38% at 30% 22%, var(--lava-c2), transparent 74%),
+        radial-gradient(34% 32% at 10% 82%, var(--lava-c3), transparent 76%);
+    animation: lavaShiftB 13s linear infinite;
+    opacity: 0.66;
+}
+
+.passcode-card {
+    position: relative;
+    z-index: 2;
+    width: min(360px, 90vw);
+    padding: 28px 24px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(235, 240, 255, 0.88));
+    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    transform: translateY(12px) scale(0.98);
+    animation: cardIn 0.45s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+body.dark .passcode-card {
+    background: linear-gradient(145deg, rgba(24, 28, 46, 0.96), rgba(15, 20, 40, 0.92));
+    border-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark .passcode-overlay {
+    --lava-c1: rgba(56, 121, 200, 0.36);
+    --lava-c2: rgba(90, 52, 145, 0.42);
+    --lava-c3: rgba(35, 91, 145, 0.34);
+    background: rgba(5, 8, 18, 0.74);
+}
+
+.passcode-label {
+    margin: 0 0 12px;
+    font-family: 'Montserrat';
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.passcode-input {
+    width: 172px;
+    max-width: 100%;
+    height: 52px;
+    border-radius: 12px;
+    border: 1px solid rgba(96, 190, 248, 0.5);
+    outline: none;
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    color: #1f2635;
+    background: rgba(255, 255, 255, 0.95);
+    transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+}
+
+.passcode-input:focus {
+    border-color: #60bef8;
+    box-shadow: 0 0 0 4px rgba(96, 190, 248, 0.2);
+    transform: translateY(-1px);
+}
+
+body.dark .passcode-input {
+    color: #edf1ff;
+    background: rgba(8, 13, 26, 0.92);
+    border-color: rgba(96, 190, 248, 0.4);
+}
+
+.passcode-message {
+    min-height: 1.25rem;
+    margin: 12px 0 0;
+    font-family: 'Montserrat';
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #6d7485;
+}
+
+.passcode-message.error {
+    color: #d84f7d;
+}
+
+.auth-step.hidden {
+    display: none;
+}
+
+.auth-input {
+    width: min(280px, 100%);
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid rgba(96, 190, 248, 0.4);
+    padding: 0 12px;
+    margin: 0 auto 10px;
+    display: block;
+    font-family: 'Montserrat';
+    font-size: 0.95rem;
+    color: #1f2635;
+    background: rgba(255, 255, 255, 0.95);
+    outline: none;
+}
+
+.auth-input:focus {
+    border-color: #60bef8;
+    box-shadow: 0 0 0 3px rgba(96, 190, 248, 0.2);
+}
+
+.auth-button {
+    width: min(280px, 100%);
+    height: 44px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 4px;
+    font-family: 'Montserrat';
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #60bef8, #d88cff);
+    cursor: pointer;
+}
+
+.auth-button:hover {
+    filter: brightness(1.04);
+}
+
+.quiz-help {
+    margin: 0 0 12px;
+    font-size: 0.86rem;
+    color: #5c6275;
+}
+
+.quiz-grid label {
+    display: block;
+    text-align: left;
+    margin-bottom: 10px;
+    font-family: 'Montserrat';
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #3b4254;
+}
+
+.quiz-grid select {
+    width: 100%;
+    height: 36px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1px solid rgba(96, 190, 248, 0.35);
+    padding: 0 8px;
+    font-family: 'Montserrat';
+    background: rgba(255, 255, 255, 0.94);
+    color: #1f2635;
+}
+
+.specialization-box {
+    width: min(650px, 92vw);
+}
+
+.video-list {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.video-list li {
+    margin: 0 0 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(96, 190, 248, 0.25);
+    font-family: 'Montserrat';
+    color: #283045;
+}
+
+.passcode-overlay.unlocking {
+    animation: overlayOut 1.2s cubic-bezier(.22, .72, .18, 1) forwards;
+}
+
+.passcode-overlay.unlocking::before {
+    animation: lavaExitA 1.2s cubic-bezier(.22, .72, .18, 1) forwards;
+}
+
+.passcode-overlay.unlocking::after {
+    animation: lavaExitB 1.2s cubic-bezier(.22, .72, .18, 1) forwards;
+}
+
+.passcode-overlay.unlocking .passcode-card {
+    animation: cardOut 1.1s cubic-bezier(.2, .74, .18, 1) forwards;
+}
+
+.passcode-input.shake {
+    animation: shake 0.28s linear;
+}
+
+@keyframes overlayIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cardIn {
+    to {
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes overlayOut {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+        backdrop-filter: blur(10px);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.02);
+        backdrop-filter: blur(2px);
+        visibility: hidden;
+    }
+}
+
+@keyframes cardOut {
+    0% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1);
+        box-shadow: 0 22px 46px rgba(0, 0, 0, 0.35);
+    }
+    28% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(-7px) scale(1.02);
+        box-shadow: 0 28px 60px rgba(96, 190, 248, 0.38);
+    }
+    to {
+        opacity: 0;
+        filter: blur(7px);
+        transform: translateY(30px) scale(0.93);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+    }
+}
+
+@keyframes lavaShiftA {
+    0% {
+        transform: translate(-4%, 0%) rotate(0deg) scale(1);
+    }
+    50% {
+        transform: translate(5%, -4%) rotate(180deg) scale(1.09);
+    }
+    100% {
+        transform: translate(-4%, 0%) rotate(360deg) scale(1);
+    }
+}
+
+@keyframes lavaShiftB {
+    0% {
+        transform: translate(5%, -3%) rotate(0deg) scale(1.04);
+    }
+    50% {
+        transform: translate(-5%, 4%) rotate(-180deg) scale(1.12);
+    }
+    100% {
+        transform: translate(5%, -3%) rotate(-360deg) scale(1.04);
+    }
+}
+
+@keyframes lavaExitA {
+    to {
+        opacity: 0;
+        filter: blur(56px);
+        transform: translateY(16%) scale(1.2);
+    }
+}
+
+@keyframes lavaExitB {
+    to {
+        opacity: 0;
+        filter: blur(62px);
+        transform: translateY(-16%) scale(1.25);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+
+/* Modern hyperlink styles */
+a:not(.menu-item) {
+    color: #60bef8;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    transition: transform 0.1s ease, color 0.3s ease, text-decoration 0.3s ease;
+}
+
+a:not(.menu-item):hover {
+    color: #d88cff;
+    text-decoration: underline;
+}
+
+a:not(.menu-item):visited {
+    color: #fcbdfb;
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+    position: fixed;
+    top: 18px;
+    right: 20px;
+    z-index: 400;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.toggle-track {
+    position: relative;
+    width: 64px;
+    height: 32px;
+    background: linear-gradient(135deg, #60bef8, #d88cff);
+    border-radius: 32px;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    transition: background 0.5s ease;
+    box-shadow: 0 4px 15px rgba(96, 190, 248, 0.4);
+}
+
+body.dark .toggle-track {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.toggle-thumb {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+    background: white;
+    border-radius: 50%;
+    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+body.dark .toggle-thumb {
+    transform: translateX(32px);
+}
+
+.toggle-icon-sun,
+.toggle-icon-moon {
+    position: absolute;
+    font-size: 13px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    line-height: 1;
+}
+
+/* Sun shows in light mode (thumb left), moon shows in dark mode (thumb right) */
+.toggle-icon-sun { opacity: 1; transform: scale(1); }
+.toggle-icon-moon { opacity: 0; transform: scale(0.5); }
+
+body.dark .toggle-icon-sun { opacity: 0; transform: scale(0.5); }
+body.dark .toggle-icon-moon { opacity: 1; transform: scale(1); }
+
+/* Stars appear in dark mode on the track */
+.toggle-track::before {
+    content: '\2726 \2726';
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 7px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+body.dark .toggle-track::before {
+    opacity: 1;
+}
+
+/* ===== DARK MODE STYLES ===== */
+body.dark {
+    background-image: linear-gradient(60deg, #0d1b2a, #1a0a2e, #0d1b2a);
+}
+
+body.dark .box {
+    background-color: rgba(20, 20, 35, 0.85);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark p {
+    color: #e8e8f0;
+}
+
+body.dark .menu-item {
+    color: #e8e8f0;
+}
+
+body.dark .menu-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #60bef8;
+}
+
+body.dark a:not(.menu-item) {
+    color: #60bef8;
+}
+
+body.dark a:not(.menu-item):visited {
+    color: #d88cff;
+}
+
+body.dark .banner {
+    background: rgba(20, 20, 35, 0.85);
+}
+
+body.dark .snowflake {
+    background: radial-gradient(circle at 30% 30%, rgba(200, 200, 255, 0.7), rgba(150, 150, 220, 0.3));
+}
+
+body.dark .tier-card {
+    background: rgba(18, 23, 42, 0.88);
+    border-color: rgba(96, 190, 248, 0.2);
+}
+
+body.dark .tier-card::before {
+    background: radial-gradient(circle, rgba(96, 190, 248, 0.18), transparent 70%);
+}
+
+body.dark .tier-label {
+    color: #9eb0d8;
+}
+
+body.dark .tier-price {
+    color: #f3f5ff;
+}
+
+body.dark .tier-price span {
+    color: #a8b3d4;
+}
+
+body.dark .tier-perks li {
+    color: #d1d8ef;
+}
+
+body.dark .tier-cta {
+    color: #e8ecff;
+    background: rgba(96, 190, 248, 0.2);
+}
+
+body.dark .tier-cta:hover {
+    background: rgba(96, 190, 248, 0.28);
+}
+
+body.dark .auth-input {
+    color: #edf1ff;
+    background: rgba(8, 13, 26, 0.92);
+    border-color: rgba(96, 190, 248, 0.4);
+}
+
+body.dark .quiz-help {
+    color: #bbc7e4;
+}
+
+body.dark .quiz-grid label {
+    color: #d8dff3;
+}
+
+body.dark .quiz-grid select {
+    color: #edf1ff;
+    background: rgba(8, 13, 26, 0.92);
+    border-color: rgba(96, 190, 248, 0.4);
+}
+
+body.dark .video-list li {
+    color: #e5eaf9;
+    background: rgba(17, 23, 44, 0.85);
+    border-color: rgba(96, 190, 248, 0.25);
+}
+
+@keyframes bgAnimatedGradient{
+    0%{
+        background-position: 0 85%;
+    }
+    50%{
+        background-position: 100% 20%;
+    }
+    100%{
+        background-position: 0 85%;
+    }
+}
+
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.snowflake {
+    position: fixed;
+    top: -10vh;
+    z-index: 1;
+    user-select: none;
+    cursor: default;
+    width: 10px;
+    height: 10px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.5));
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    animation: snowfall linear infinite;
+}
+
+.snowflake:nth-child(1) {
+    left: 10%;
+    opacity: 0.9;
+    animation-duration: 12s;
+    animation-delay: 0s;
+}
+
+.snowflake:nth-child(2) {
+    left: 20%;
+    opacity: 0.7;
+    animation-duration: 15s;
+    animation-delay: 2s;
+}
+
+.snowflake:nth-child(3) {
+    left: 30%;
+    opacity: 0.8;
+    animation-duration: 14s;
+    animation-delay: 4s;
+}
+
+.snowflake:nth-child(4) {
+    left: 40%;
+    opacity: 0.9;
+    animation-duration: 16s;
+    animation-delay: 1s;
+}
+
+.snowflake:nth-child(5) {
+    left: 50%;
+    opacity: 0.7;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+.snowflake:nth-child(6) {
+    left: 60%;
+    opacity: 0.8;
+    animation-duration: 17s;
+    animation-delay: 0.5s;
+}
+
+.snowflake:nth-child(7) {
+    left: 70%;
+    opacity: 0.9;
+    animation-duration: 15s;
+    animation-delay: 2.5s;
+}
+
+.snowflake:nth-child(8) {
+    left: 80%;
+    opacity: 0.7;
+    animation-duration: 14s;
+    animation-delay: 1.5s;
+}
+
+.snowflake:nth-child(9) {
+    left: 90%;
+    opacity: 0.8;
+    animation-duration: 16s;
+    animation-delay: 3.5s;
+}
+
+.snowflake:nth-child(10) {
+    left: 5%;
+    opacity: 0.9;
+    animation-duration: 13s;
+    animation-delay: 2s;
+}
+
+@keyframes snowfall {
+    0% {
+        top: -10vh;
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(50px);
+    }
+    100% {
+        top: 100vh;
+        transform: translateX(-50px);
+    }
+}

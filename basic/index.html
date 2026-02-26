@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic - School Project!</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <script src="../Java/script.js" defer></script>
+</head>
+<body>
+    <nav class="menu">
+            <a href="/" class="menu-item">Home</a>
+            <a href="/basic" class="menu-item">Basic</a>
+            <a href="/advanced" class="menu-item">Advanced</a>
+            <a href="/specialties" class="menu-item">Specialties</a>
+            <a href="/Payment/" class="menu-item">Membership</a>
+    </nav>
+
+    <div class="auth-corner">
+        <button id="openLoginButton" class="menu-item" type="button">Log In</button>
+        <button id="logoutButton" class="menu-item" type="button" hidden>Log Out</button>
+    </div>
+
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+        <div class="snowflake"></div>
+    </div>
+
+    <div class="bg-container">
+        <div class="box">
+            <h1>School Project!</h1>
+        </div>
+        <div class="box content-box">
+            <h2>Basic HTML</h2>
+            <p>Another cool thing you don't even need CSS for are Hyperlinks! You can use them by using the 'anchor' tag or the 'a' tag in HTML. They look like <a style="color: orange;" href="https://www.pholectify.com" target="_blank">this</a> and will lead you to another website.</p>
+        </div>
+    </div>
+
+    <div id="overlay" class="passcode-overlay" aria-modal="true" role="dialog" hidden>
+        <div class="passcode-card">
+            <div id="loginStep" class="auth-step">
+                <p class="passcode-label">Login</p>
+                <input id="username" class="auth-input" type="text" placeholder="Username" autocomplete="username">
+                <input id="password" class="auth-input" type="password" placeholder="Password" autocomplete="current-password">
+                <button id="loginSubmitButton" class="auth-button" type="button">Continue</button>
+                <p id="authMessage" class="passcode-message" aria-live="polite"></p>
+            </div>
+
+            <form id="quizStep" class="auth-step hidden">
+                <p class="passcode-label">Personalize Your Learning</p>
+                <p class="quiz-help">Answer 5 quick questions so we can recommend your videos (A-Z).</p>
+                <div class="quiz-grid">
+                    <label>1. What do you want to focus on?
+                        <select id="q1" required>
+                            <option value="">Select one</option>
+                            <option value="frontend">Frontend</option>
+                            <option value="backend">Backend</option>
+                            <option value="design">Design/UI</option>
+                            <option value="fullstack">Full Stack</option>
+                        </select>
+                    </label>
+                    <label>2. Preferred lesson length?
+                        <select id="q2" required>
+                            <option value="">Select one</option>
+                            <option value="quick">Quick lessons</option>
+                            <option value="balanced">Balanced</option>
+                            <option value="deep">Deep dives</option>
+                        </select>
+                    </label>
+                    <label>3. Current skill level?
+                        <select id="q3" required>
+                            <option value="">Select one</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </label>
+                    <label>4. How do you like to learn?
+                        <select id="q4" required>
+                            <option value="">Select one</option>
+                            <option value="projects">Project based</option>
+                            <option value="theory">Theory first</option>
+                            <option value="mixed">Mixed approach</option>
+                        </select>
+                    </label>
+                    <label>5. Pick your most important topic:
+                        <select id="q5" required>
+                            <option value="">Select one</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="accessibility">Accessibility</option>
+                            <option value="performance">Performance</option>
+                        </select>
+                    </label>
+                </div>
+                <button class="auth-button" type="submit">Get My Video Plan</button>
+                <p id="quizMessage" class="passcode-message" aria-live="polite"></p>
+            </form>
+        </div>
+    </div>
+
+    <div class="theme-toggle">
+        <button class="toggle-track" id="themeToggle" aria-label="Toggle dark mode">
+            <div class="toggle-thumb">
+                <span class="toggle-icon-sun">&#9728;</span>
+                <span class="toggle-icon-moon">&#127769;</span>
+            </div>
+        </button>
+    </div>
+</body>
+</html>
